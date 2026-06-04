@@ -1,0 +1,67 @@
+name: Dependabot Automated Patching
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  schedule:
+    - cron: '0 4 * * 3'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  validate-and-automerge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+
+    steps:
+      - name: Checkout del Repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Instalar pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - name: Instalar Dependencias (Frozen Lockfile)
+        run: pnpm install --frozen-lockfile
+
+      - name: Auditoría de Seguridad de Dependencias
+        run: pnpm audit --audit-level=high
+
+      - name: Análisis Estático de Código (Linter)
+        run: pnpm lint
+
+      - name: TypeScript Type Check
+        run: pnpm typecheck
+
+      - name: Compilación Next.js (Static Site Generation)
+        run: pnpm build
+
+      - name: Extraer Metadatos de Dependabot
+        id: metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Habilitar Auto-Merge para Minor y Patch
+        if: |
+          steps.metadata.outputs.update-type == 'version-update:semver-minor' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Auto-Aprobación de Parches de Seguridad Críticos
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        run: gh pr review --approve "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

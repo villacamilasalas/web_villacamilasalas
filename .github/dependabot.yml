@@ -1,0 +1,25 @@
+version: 2
+updates:
+  # Dependencias de la aplicación (npm / pnpm)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      time: "09:00"
+      timezone: "Europe/Madrid"
+    open-pull-requests-limit: 10
+    groups:
+      dependencies-group:
+        patterns:
+          - "*"
+
+  # Dependencias de flujos de trabajo (GitHub Actions)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/Madrid"
+    open-pull-requests-limit: 5
