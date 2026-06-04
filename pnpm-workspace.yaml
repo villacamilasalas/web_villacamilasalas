@@ -4,3 +4,6 @@ allowBuilds:
   netlify-cli: true
   sharp: true
   unix-dgram: true
+minimumReleaseAgeExclude:
+  - lodash@4.17.24
+  - postcss@8.5.10
