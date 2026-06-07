@@ -12,7 +12,6 @@ __v0_jsx-dev-runtime.ts
 /.pnp
 .pnp.js
 node_modules
-/docs
 
 # testing
 /coverage

@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Great_Vibes, Montserrat } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
+import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
 
 const inter = Inter({ 
@@ -43,10 +45,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${greatVibes.variable} ${montserrat.variable} bg-background`}>
+    <html lang="es" className={`${inter.variable} ${greatVibes.variable} ${montserrat.variable} bg-background`} suppressHydrationWarning>
         <body className="font-sans antialiased overflow-x-hidden">
-        {children}
-        {process.env.NODE_ENV === 'production' }
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   )

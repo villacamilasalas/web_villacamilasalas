@@ -28,6 +28,7 @@ import { LocationSection } from "@/components/location-section";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingActions } from "@/components/floating-actions";
 import { WatercolorDecoration } from "@/components/watercolor-decoration";
+import { ContactForm } from "@/components/contact-form";
 import { distances } from "@/data/data";
 
 const reviews = [
@@ -72,7 +73,7 @@ export default function VillaCamilaPage() {
             className="flex items-center gap-3 text-foreground transition-colors hover:text-primary"
           >
             <img
-              src="/logo.jpeg"
+              src="/logo.webp"
               alt="Villa Camila"
               className="h-15 w-auto sm:h-11"
             />
@@ -173,7 +174,7 @@ export default function VillaCamilaPage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('./Exteriores/VC - Ext_006.jpeg')",
+              backgroundImage: "url('./Exteriores/VC - Ext_006.webp')",
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/10" />
@@ -262,7 +263,7 @@ export default function VillaCamilaPage() {
             <div className="mt-24 grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
               <div className="img-reveal overflow-hidden rounded-2xl">
                 <img
-                  src="./Mirador Sablon.jpg"
+                  src="./Mirador Sablon.webp"
                   alt="Paisaje de Asturias"
                   className="h-[400px] w-full object-cover lg:h-[500px]"
                 />
@@ -489,63 +490,7 @@ export default function VillaCamilaPage() {
                 <h3 className="font-montserrat text-2xl font-medium text-foreground">
                   Envíanos un mensaje
                 </h3>
-                <form
-                  className="mt-8 space-y-6"
-                  onSubmit={(e) => e.preventDefault()}
-                >
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-foreground"
-                    >
-                      Nombre
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="mt-2 block w-full rounded-xl border-0 bg-secondary/50 px-5 py-4 text-foreground ring-1 ring-inset ring-border/50 placeholder:text-muted-foreground focus:ring-2 focus:ring-primary"
-                      placeholder="Tu nombre"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-foreground"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="mt-2 block w-full rounded-xl border-0 bg-secondary/50 px-5 py-4 text-foreground ring-1 ring-inset ring-border/50 placeholder:text-muted-foreground focus:ring-2 focus:ring-primary"
-                      placeholder="tu@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-foreground"
-                    >
-                      Mensaje
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      className="mt-2 block w-full resize-none rounded-xl border-0 bg-secondary/50 px-5 py-4 text-foreground ring-1 ring-inset ring-border/50 placeholder:text-muted-foreground focus:ring-2 focus:ring-primary"
-                      placeholder="¿En qué podemos ayudarte?"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="btn-tactile w-full py-6 text-base"
-                  >
-                    Enviar mensaje
-                  </Button>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>
