@@ -54,7 +54,7 @@ export function SiteFooter() {
             <div className="text-center lg:text-left">
               <div className="flex items-center justify-center gap-3 lg:justify-start">
                 <img
-                  src="/logo.jpeg"
+                  src="/logo.webp"
                   alt="Villa Camila"
                   className="h-8 w-auto"
                 />

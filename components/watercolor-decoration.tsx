@@ -12,8 +12,8 @@ export function WatercolorDecoration({
   layout = 'side',
 }: WatercolorDecorationProps) {
   const src = direction === 'right'
-    ? '/acuarela-lado a lado.png'
-    : '/acuarela-lado a lado-invertido.png'
+    ? '/acuarela-lado a lado.webp'
+    : '/acuarela-lado a lado-invertido.webp'
 
   const variantClasses = variant === 'dark'
     ? 'opacity-40 sm:opacity-45 mix-blend-soft-light'

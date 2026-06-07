@@ -167,7 +167,7 @@ export function QueHacerSection() {
               {/* Foto 1: Principal Izquierda */}
               <div className="img-reveal col-span-7 aspect-[5/6] rounded-2xl shadow-soft-lg">
                 <img 
-                  src="./Cruz-de-Asturias-en-cascada-de-Nonaya.jpg" // Cambia por tus rutas reales
+                  src="./Cruz-de-Asturias-en-cascada-de-Nonaya.webp" // Cambia por tus rutas reales
                   alt="Peregrino en el Camino Primitivo de Salas" 
                   className="h-full w-full object-cover"
                 />
@@ -178,7 +178,7 @@ export function QueHacerSection() {
                 {/* Foto 2: Superior Derecha */}
                 <div className="img-reveal aspect-square rounded-2xl shadow-soft">
                   <img 
-                    src="./Molino-de-Bedures.jpg" 
+                    src="./Molino-de-Bedures.webp" 
                     alt="Paisaje boscoso río Nonaya" 
                     className="h-full w-full object-cover"
                   />
@@ -186,7 +186,7 @@ export function QueHacerSection() {
                 {/* Foto 3: Inferior Derecha (Desplazada ligeramente para dar dinamismo) */}
                 <div className="img-reveal aspect-[5/4] rounded-2xl shadow-soft lg:translate-y-4">
                   <img 
-                    src="./Salas-Tineo-Camino-de-Santiago.jpg"
+                    src="./Salas-Tineo-Camino-de-Santiago.webp"
                      
                     alt="Colegiata de Santa María de Salas" 
                     className="h-full w-full object-cover"

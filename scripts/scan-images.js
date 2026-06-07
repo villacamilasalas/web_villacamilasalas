@@ -5,7 +5,7 @@ const publicDir = path.join(__dirname, "..", "public")
 const outputDir = path.join(__dirname, "..", "data")
 const outputFile = path.join(outputDir, "apartment-images.ts")
 
-const imageExtensions = [".jpeg", ".jpg", ".png", ".webp"]
+const imageExtensions = [".webp"]
 
 const entries = fs.readdirSync(publicDir, { withFileTypes: true })
 const folders = entries
