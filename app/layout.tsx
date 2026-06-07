@@ -25,6 +25,20 @@ export const metadata: Metadata = {
   description: 'Descubre Villa Camila Apartamentos en Salas, Asturias. Alojamientos rurales con encanto en el corazón del occidente asturiano. WiFi, cocina completa y la tranquilidad de la naturaleza.',
   keywords: ['apartamentos rurales', 'Asturias', 'Salas', 'alojamiento rural', 'turismo rural', 'Villa Camila'],
   authors: [{ name: 'Villa Camila Apartamentos' }],
+  icons: {
+    icon: [
+      { url: '/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon/favicon.ico', type: 'image/x-icon' },
+    ],
+    apple: [
+      { url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/favicon/site.webmanifest',
+  appleWebApp: {
+    title: 'villacamilasalas',
+  },
   openGraph: {
     title: 'Villa Camila Apartamentos | Tu refugio en Asturias',
     description: 'Alojamientos rurales con encanto en el corazón del occidente asturiano.',
