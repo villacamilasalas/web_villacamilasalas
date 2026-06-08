@@ -6,7 +6,6 @@ import {
   Clock,
   Car,
   Phone,
-  Star,
   Trees,
   Waves,
   Utensils,
@@ -27,6 +26,7 @@ import dynamic from "next/dynamic";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingActions } from "@/components/floating-actions";
 import { WatercolorDecoration } from "@/components/watercolor-decoration";
+import { TrustindexReviews } from "@/components/trustindex-reviews";
 import { distances } from "@/data/data";
 
 const ApartamentosSection = dynamic(
@@ -41,30 +41,6 @@ const ContactForm = dynamic(
   () => import("@/components/contact-form"),
   { ssr: false }
 );
-
-const reviews = [
-  {
-    name: "María García",
-    avatar: "M",
-    rating: 5,
-    text: "Lugar mágico, perfecto para desconectar. Los apartamentos están impecables y los anfitriones son encantadores.",
-    date: "Hace 2 semanas",
-  },
-  {
-    name: "Carlos Fernández",
-    avatar: "C",
-    rating: 5,
-    text: "Repetiremos sin duda. La ubicación es ideal para explorar Asturias occidental. Todo muy limpio y bien equipado.",
-    date: "Hace 1 mes",
-  },
-  {
-    name: "Ana Rodríguez",
-    avatar: "A",
-    rating: 5,
-    text: "Una experiencia inolvidable. El entorno es precioso y los apartamentos tienen todo lo necesario. ¡Volveremos!",
-    date: "Hace 3 semanas",
-  },
-];
 
 export default function VillaCamilaPage() {
   const scrollToSection = (id: string) => {
@@ -361,87 +337,8 @@ export default function VillaCamilaPage() {
               </h2>
             </div>
 
-            {/* Google Reviews Widget - Elevated editorial style */}
-            <div className="mt-16 rounded-2xl bg-card p-8 shadow-soft sm:p-10">
-              <div className="flex flex-col items-center justify-between gap-6 border-b border-border/50 pb-8 sm:flex-row">
-                <div className="flex items-center gap-5">
-                  <div className="flex size-14 items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="size-12">
-                      <path
-                        fill="#4285F4"
-                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                      />
-                      <path
-                        fill="#34A853"
-                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                      />
-                      <path
-                        fill="#FBBC05"
-                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                      />
-                      <path
-                        fill="#EA4335"
-                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-lg font-medium text-foreground">
-                      Google Reviews
-                    </p>
-                    <div className="mt-1 flex items-center gap-3">
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="size-5 fill-yellow-400 text-yellow-400"
-                          />
-                        ))}
-                      </div>
-                      <span className="text-2xl font-light text-foreground">
-                        5.0
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <Button variant="outline" className="btn-tactile">
-                  Escribir una reseña
-                </Button>
-              </div>
-
-              <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {reviews.map((review, index) => (
-                  <div
-                    key={index}
-                    className="rounded-xl bg-secondary/30 p-6 transition-all duration-300 hover:bg-secondary/50"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="flex size-12 items-center justify-center rounded-full bg-primary text-base font-medium text-primary-foreground">
-                        {review.avatar}
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">
-                          {review.name}
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                          {review.date}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="mt-4 flex">
-                      {[...Array(review.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="size-4 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                    </div>
-                    <p className="mt-4 font-montserrat text-base italic leading-relaxed text-foreground">
-                      {`"${review.text}"`}
-                    </p>
-                  </div>
-                ))}
-              </div>
+            <div className="mt-16">
+              <TrustindexReviews />
             </div>
           </div>
         </section>
