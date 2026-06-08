@@ -2,21 +2,32 @@
 
 import { useState, useEffect, useRef } from 'react'
 
+const SCRIPT_SRC = 'https://cdn.trustindex.io/loader.js?05b79d07309f7483595629e00fc'
+
 export function TrustindexReviews() {
   const [loaded, setLoaded] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!containerRef.current || containerRef.current.querySelector('script')) return
+    const container = containerRef.current
+    if (!container) return
+    if (container.querySelector(`script[src="${SCRIPT_SRC}"]`)) return
 
     const script = document.createElement('script')
-    script.src = 'https://cdn.trustindex.io/loader.js?05b79d07309f7483595629e00fc'
-    script.defer = true
+    script.src = SCRIPT_SRC
     script.async = true
-    script.onload = () => {
-      setTimeout(() => setLoaded(true), 100)
+    script.onload = () => setLoaded(true)
+    script.onerror = () => setLoaded(true)
+
+    container.appendChild(script)
+
+    const safetyTimeout = setTimeout(() => setLoaded(true), 4000)
+
+    return () => {
+      clearTimeout(safetyTimeout)
+      const s = container.querySelector('script')
+      if (s) s.remove()
     }
-    containerRef.current.appendChild(script)
   }, [])
 
   return (
@@ -32,12 +43,6 @@ export function TrustindexReviews() {
           Cargando opiniones de Google...
         </div>
       )}
-      <div
-        className={`transition-opacity duration-500 ${
-          loaded ? 'opacity-100' : 'opacity-0'
-        }`}
-        style={{ minHeight: 'inherit' }}
-      />
     </div>
   )
 }
