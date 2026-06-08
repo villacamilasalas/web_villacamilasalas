@@ -84,6 +84,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${greatVibes.variable} ${montserrat.variable} bg-background`} suppressHydrationWarning>
         <body className="font-sans antialiased overflow-x-hidden">
+        <link rel="preload" as="image" href="/Exteriores/VC - Ext_006.avif" type="image/avif"/>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

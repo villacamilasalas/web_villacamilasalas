@@ -23,13 +23,24 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { QueHacerSection } from "@/components/que-hacer-section";
-import { ApartamentosSection } from "@/components/apartamentos-section";
-import { LocationSection } from "@/components/location-section";
+import dynamic from "next/dynamic";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingActions } from "@/components/floating-actions";
 import { WatercolorDecoration } from "@/components/watercolor-decoration";
-import { ContactForm } from "@/components/contact-form";
 import { distances } from "@/data/data";
+
+const ApartamentosSection = dynamic(
+  () => import("@/components/apartamentos-section"),
+  { ssr: false }
+);
+const LocationSection = dynamic(
+  () => import("@/components/location-section"),
+  { ssr: false }
+);
+const ContactForm = dynamic(
+  () => import("@/components/contact-form"),
+  { ssr: false }
+);
 
 const reviews = [
   {
@@ -172,12 +183,16 @@ export default function VillaCamilaPage() {
       <main>
         {/* Hero Section - Editorial with generous whitespace */}
         <section id="inicio" className="relative min-h-[90vh] overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: "url('./Exteriores/VC - Ext_006.webp')",
-            }}
-          />
+          <picture className="absolute inset-0">
+            <source srcSet="/Exteriores/VC - Ext_006.avif" type="image/avif" />
+            <source srcSet="/Exteriores/VC - Ext_006.webp" type="image/webp" />
+            <img
+              src="/Exteriores/VC - Ext_006.webp"
+              alt="Villa Camila Salas Apartamentos — Turismo Rural en Asturias"
+              className="h-full w-full object-cover"
+              fetchPriority="high"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/10" />
           <div className="relative mx-auto flex min-h-[90vh] max-w-6xl items-center px-6 py-12 lg:px-8">
             <div className="max-w-2xl md:-translate-y-16 transition-transform duration-300">

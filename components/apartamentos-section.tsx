@@ -7,7 +7,7 @@ import { ApartmentCard } from "@/components/apartment-card"
 import { ApartmentDetailDialog } from "@/components/apartment-detail-dialog"
 import { WatercolorDecoration } from "@/components/watercolor-decoration"
 
-export function ApartamentosSection() {
+export default function ApartamentosSection() {
   const [selectedApartment, setSelectedApartment] = useState<Apartment | null>(
     null,
   )

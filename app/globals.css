@@ -16,8 +16,8 @@
   --secondary: oklch(0.94 0.01 85); /* Light cream */
   --secondary-foreground: oklch(0.28 0.06 145);
   --muted: oklch(0.92 0.01 85);
-  --muted-foreground: oklch(0.45 0.02 250);
-  --accent: oklch(0.55 0.12 75); /* Earthy warm accent */
+  --muted-foreground: oklch(0.38 0.02 250);
+  --accent: oklch(0.50 0.12 75); /* Earthy warm accent — ratio > 4.5:1 sobre fondo crema */
   --accent-foreground: oklch(0.98 0.005 85);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);

@@ -3,7 +3,7 @@
 import { Car, ArrowUpRight } from "lucide-react"
 import { distances } from "@/data/data"
 
-export function LocationSection() {
+export default function LocationSection() {
   return (
     <section className="bg-card py-24 sm:py-32">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">

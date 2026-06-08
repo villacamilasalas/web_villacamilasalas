@@ -14,7 +14,7 @@ const contactSchema = z.object({
 
 type ContactData = z.infer<typeof contactSchema>
 
-export function ContactForm() {
+export default function ContactForm() {
   const [pending, setPending] = useState(false)
 
   const {
