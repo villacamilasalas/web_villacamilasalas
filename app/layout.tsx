@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Great_Vibes, Montserrat } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import { Toaster } from '@/components/ui/sonner'
+import { GoogleAnalytics } from '@/components/google-analytics'
 import './globals.css'
 
 const inter = Inter({ 
@@ -19,6 +20,8 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: '--font-montserrat',
 })
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://villacamilasalas.es'
 
 export const metadata: Metadata = {
   title: 'Villa Camila Apartamentos | Tu refugio en Asturias',
@@ -42,9 +45,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Villa Camila Apartamentos | Tu refugio en Asturias',
     description: 'Alojamientos rurales con encanto en el corazón del occidente asturiano.',
+    url: siteUrl,
     type: 'website',
     locale: 'es_ES',
+    siteName: 'Villa Camila Apartamentos',
   },
+  metadataBase: new URL(siteUrl),
 }
 
 export const viewport: Viewport = {
@@ -62,6 +68,7 @@ export default function RootLayout({
     <html lang="es" className={`${inter.variable} ${greatVibes.variable} ${montserrat.variable} bg-background`} suppressHydrationWarning>
         <body className="font-sans antialiased overflow-x-hidden">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+          <GoogleAnalytics />
           {children}
           <Toaster />
         </ThemeProvider>
