@@ -27,7 +27,7 @@ export function WatercolorDecoration({
       >
         <img
           src={src}
-          alt=""
+          alt="Decoración acuarela — Villa Camila Salas Apartamentos en Asturias"
           loading="lazy"
           className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-36 sm:h-52 lg:h-100 object-cover object-[center_65%] select-none ${variantClasses}`}
         />
@@ -38,7 +38,7 @@ export function WatercolorDecoration({
   return (
     <img
       src={src}
-      alt=""
+      alt="Decoración acuarela — Villa Camila Salas Apartamentos en Asturias"
       aria-hidden="true"
       loading="lazy"
       className={`pointer-events-none select-none absolute w-auto h-56 sm:h-72 md:h-80 lg:h-[30rem] ${variantClasses} `}

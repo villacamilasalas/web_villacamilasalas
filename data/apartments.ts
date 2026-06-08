@@ -97,8 +97,8 @@ export const apartments: Apartment[] = [
     name: "La Figal",
     type: "Apartamento",
     guests: 4,
-    bedrooms: 1,
-    bathrooms: 2,
+    bedrooms: 2,
+    bathrooms: 1,
     petsAllowed: false,
     description:
       "La Figal evoca los paisajes de higueras del occidente asturiano. Un apartamento sereno y bien iluminado, perfecto para quienes buscan paz y naturaleza.",

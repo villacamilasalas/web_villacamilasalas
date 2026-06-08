@@ -51,9 +51,9 @@ export function LocationSection() {
               className="card-reveal group flex flex-col rounded-2xl bg-secondary/40 p-5 shadow-soft"
             >
               <div className="flex items-baseline justify-between">
-                <h3 className="font-montserrat text-base font-semibold text-foreground">
+                <p className="font-montserrat text-base font-semibold text-foreground">
                   {item.place}
-                </h3>
+                </p>
                 <span className="text-sm font-semibold text-primary">
                   {item.time}
                 </span>

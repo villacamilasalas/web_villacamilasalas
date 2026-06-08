@@ -24,10 +24,10 @@ const montserrat = Montserrat({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://villacamilasalas.es'
 
 export const metadata: Metadata = {
-  title: 'Villa Camila Apartamentos | Tu refugio en Asturias',
-  description: 'Descubre Villa Camila Apartamentos en Salas, Asturias. Alojamientos rurales con encanto en el corazón del occidente asturiano. WiFi, cocina completa y la tranquilidad de la naturaleza.',
-  keywords: ['apartamentos rurales', 'Asturias', 'Salas', 'alojamiento rural', 'turismo rural', 'Villa Camila'],
-  authors: [{ name: 'Villa Camila Apartamentos' }],
+  title: 'Villa Camila Salas Apartamentos | Turismo Rural en Asturias',
+  description: 'Descubre Villa Camila Salas Apartamentos en Asturias. Alojamientos rurales con encanto en el occidente asturiano. WiFi, cocina completa y naturaleza.',
+  keywords: ['apartamentos rurales', 'Asturias', 'Salas', 'alojamiento rural', 'turismo rural', 'Villa Camila', 'Apartamentos Asturias', 'villa asturias'],
+  authors: [{ name: 'Villa Camila Salas Apartamentos' }],
   icons: {
     icon: [
       { url: '/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
@@ -42,13 +42,30 @@ export const metadata: Metadata = {
   appleWebApp: {
     title: 'villacamilasalas',
   },
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
-    title: 'Villa Camila Apartamentos | Tu refugio en Asturias',
-    description: 'Alojamientos rurales con encanto en el corazón del occidente asturiano.',
+    title: 'Villa Camila Salas Apartamentos | Turismo Rural en Asturias',
+    description: 'Descubre Villa Camila Salas Apartamentos en Asturias. Alojamientos rurales con encanto en el occidente asturiano. WiFi, cocina completa y naturaleza.',
     url: siteUrl,
     type: 'website',
     locale: 'es_ES',
-    siteName: 'Villa Camila Apartamentos',
+    siteName: 'Villa Camila Salas Apartamentos',
+    images: [
+      {
+        url: '/Exteriores/VC - Ext_006.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Villa Camila Salas Apartamentos — Turismo Rural en Asturias',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Villa Camila Salas Apartamentos | Turismo Rural en Asturias',
+    description: 'Descubre Villa Camila Salas Apartamentos en Asturias. Alojamientos rurales con encanto en el occidente asturiano. WiFi, cocina completa y naturaleza.',
+    images: ['/Exteriores/VC - Ext_006.webp'],
   },
   metadataBase: new URL(siteUrl),
 }
@@ -67,6 +84,30 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${greatVibes.variable} ${montserrat.variable} bg-background`} suppressHydrationWarning>
         <body className="font-sans antialiased overflow-x-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LodgingBusiness",
+              "name": "Villa Camila Salas Apartamentos",
+              "image": `${siteUrl}/logo.webp`,
+              "url": siteUrl,
+              "telephone": "+34689575612",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Villaraba, 22",
+                "addressLocality": "Villazón, Salas",
+                "postalCode": "33860",
+                "addressRegion": "Asturias",
+                "addressCountry": "ES",
+              },
+              "sameAs": [
+                "https://maps.app.goo.gl/E7Ef3ogbDJPBp7R79",
+              ],
+            }),
+          }}
+        />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
           <GoogleAnalytics />
           {children}

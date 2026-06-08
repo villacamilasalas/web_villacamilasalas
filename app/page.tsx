@@ -185,8 +185,7 @@ export default function VillaCamilaPage() {
                 Salas, Asturias
               </p>
               <h1 className="mt-6 font-great-vibes text-5xl font-medium leading-[1.1] tracking-tight text-primary-foreground sm:text-6xl lg:text-7xl">
-                <span className="block">Villa Camila</span>
-                <span className="block">Experiencia</span>
+                Villa Camila Salas Apartamentos
               </h1>
               <p className="mt-20 text-lg font-light leading-relaxed text-primary-foreground/90 sm:text-xl">
                 Tu refugio en el corazón de Asturias. Descubre la magia del
@@ -247,9 +246,9 @@ export default function VillaCamilaPage() {
                   <div className="flex size-12 items-center justify-center rounded-full bg-primary/5 transition-colors group-hover:bg-primary/10">
                     <Car className="size-5 text-primary" />
                   </div>
-                  <h3 className="mt-6 font-montserrat text-2xl font-medium text-foreground">
+                  <p className="mt-6 font-montserrat text-2xl font-medium text-foreground">
                     {item.place}
-                  </h3>
+                  </p>
                   <p className="mt-1 text-3xl font-light tracking-tight text-primary">
                     {item.time}
                   </p>
