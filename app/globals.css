@@ -193,6 +193,15 @@ html {
   width: 100%;
 }
 
+/* Hide scrollbar for carousels */
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Image reveal on hover */
 .img-reveal {
   overflow: hidden;

@@ -1,0 +1,108 @@
+{
+  "summary": {
+    "rating": 4.9,
+    "totalReviews": 39,
+    "aiSummary": "Los huéspedes elogian Villa Camila Salas por su limpieza, comodidad y hermosos alrededores. Los apartamentos destacan por su diseño moderno, acogedor y tranquilidad, siendo un sitio ideal tanto para familias como para parejas que buscan desconectar."
+  },
+  "reviews": [
+    {
+      "name": "Jorge Garcia",
+      "avatar": "JG",
+      "avatarColor": "bg-orange-600",
+      "rating": 5,
+      "verified": true,
+      "dateISO": "2026-06-28",
+      "text": "Sitio increible,vistas maravillosas y la atención de 10,recomendable 100x100"
+    },
+    {
+      "name": "Joaquín López",
+      "avatar": "JL",
+      "avatarColor": "bg-purple-700",
+      "rating": 5,
+      "verified": true,
+      "dateISO": "2026-06-25",
+      "text": "Apartamentos nuevos, muy bien comunicado. Un sitio acogedor y en un entorno precioso."
+    },
+    {
+      "name": "Celia Garcia Jimenez",
+      "avatar": "CG",
+      "avatarColor": "bg-pink-600",
+      "rating": 5,
+      "verified": true,
+      "dateISO": "2026-06-25",
+      "text": "Un sitio genial, no solo por el entorno sino por la casa, tiene de todo. Animaros q merece la pena"
+    },
+    {
+      "name": "Melina Taboada",
+      "avatar": "MT",
+      "avatarColor": "bg-teal-600",
+      "rating": 5,
+      "verified": true,
+      "dateISO": "2026-06-24",
+      "text": "Un lugar maravilloso para desconectar de la rutina y reconectar con la tranquilidad. Las vistas son simplemente espectaculares y transmiten paz. Tuvimos la oportunidad de disfrutar de la naturaleza en estado puro."
+    },
+    {
+      "name": "raul perez garcia",
+      "avatar": "RP",
+      "avatarColor": "bg-blue-600",
+      "rating": 5,
+      "verified": true,
+      "dateISO": "2026-06-24",
+      "text": "La habitacion impecable, muy buen ambiente pa ir con la pareja o familia"
+    },
+    {
+      "name": "Belen Garcia",
+      "avatar": "BG",
+      "avatarColor": "bg-amber-600",
+      "rating": 4,
+      "verified": true,
+      "dateISO": "2026-06-24",
+      "text": "Si quieres un lugar para relajarte y estar tranquilo, este es tu sitio. Maravilloso apartamento, con muchos detalles e ideal para excursiones."
+    },
+    {
+      "name": "CALIFA 35",
+      "avatar": "C3",
+      "avatarColor": "bg-emerald-600",
+      "rating": 5,
+      "verified": true,
+      "dateISO": "2026-06-17",
+      "text": "Un lugar impresionante y muy muy muy recomendable"
+    },
+    {
+      "name": "Manuel José",
+      "avatar": "MJ",
+      "avatarColor": "bg-indigo-600",
+      "rating": 5,
+      "verified": true,
+      "dateISO": "2026-06-17",
+      "text": "Espectacular!! Tremendas vistas, atención y cuidado de 10, totalmente recomendable repetiré sin duda!!"
+    },
+    {
+      "name": "Adele Newlove",
+      "avatar": "AN",
+      "avatarColor": "bg-rose-600",
+      "rating": 5,
+      "verified": true,
+      "dateISO": "2026-06-17",
+      "text": "Absolutely stunning views and the apartment is fantastic, so clean and everything you need is here to use. Highly recommend"
+    },
+    {
+      "name": "Faustino Nogueira",
+      "avatar": "FN",
+      "avatarColor": "bg-slate-600",
+      "rating": 5,
+      "verified": true,
+      "dateISO": "2026-06-17",
+      "text": "Estancia fantástica, todo impecable y una atención inmejorable."
+    },
+    {
+      "name": "marcos fernandez",
+      "avatar": "MF",
+      "avatarColor": "bg-cyan-600",
+      "rating": 5,
+      "verified": true,
+      "dateISO": "2026-06-17",
+      "text": "Estancia excelente. Apartamentos nuevos, muy limpios y totalmente equipados. El entorno es tranquilo y perfecto para descansar, y los propietarios fueron muy amables y atentos. Sin duda, un lugar totalmente recomendable."
+    }
+  ]
+}

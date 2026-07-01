@@ -26,7 +26,7 @@ import dynamic from "next/dynamic";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingActions } from "@/components/floating-actions";
 import { WatercolorDecoration } from "@/components/watercolor-decoration";
-import { TrustindexReviews } from "@/components/trustindex-reviews";
+import { GoogleReviews } from "@/components/google-reviews";
 import { distances } from "@/data/data";
 
 const ApartamentosSection = dynamic(
@@ -338,7 +338,7 @@ export default function VillaCamilaPage() {
             </div>
 
             <div className="mt-16">
-              <TrustindexReviews />
+              <GoogleReviews />
             </div>
           </div>
         </section>
