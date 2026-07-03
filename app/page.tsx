@@ -27,6 +27,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { FloatingActions } from "@/components/floating-actions";
 import { WatercolorDecoration } from "@/components/watercolor-decoration";
 import { GoogleReviews } from "@/components/google-reviews";
+import { LogosSubvencion } from "@/components/logos-subvencion";
 import { distances } from "@/data/data";
 
 const ApartamentosSection = dynamic(
@@ -410,6 +411,8 @@ export default function VillaCamilaPage() {
       </main>
 
       <LocationSection />
+
+      <LogosSubvencion />
 
       <SiteFooter />
 
