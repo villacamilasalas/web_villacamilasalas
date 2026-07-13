@@ -4,7 +4,8 @@ on:
   pull_request:
     types: [opened, synchronize]
   schedule:
-    - cron: '0 4 * * 3'
+    - cron: '0 4 * * 4'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -17,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout del Repositorio
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
 
       - name: Configurar Node.js
         uses: actions/setup-node@v6
@@ -28,6 +29,11 @@ jobs:
         uses: pnpm/action-setup@v6
         with:
           version: latest
+
+      - name: Diagnosticar Versiones
+        run: |
+          node --version
+          pnpm --version
 
       - name: Instalar Dependencias (Frozen Lockfile)
         run: pnpm install --frozen-lockfile
