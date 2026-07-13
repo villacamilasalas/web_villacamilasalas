@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout del Repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Configurar Node.js
         uses: actions/setup-node@v6
@@ -28,7 +28,7 @@ jobs:
       - name: Instalar pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: latest
+          version: 11.10.0
 
       - name: Diagnosticar Versiones
         run: |
@@ -49,6 +49,9 @@ jobs:
 
       - name: Compilación Next.js (Static Site Generation)
         run: pnpm build
+
+      - name: Check Lockfile Supply-Chain Policies
+        run: pnpm install --frozen-lockfile --config.minimumReleaseAge=1440 --config.minimumReleaseAgeStrict=true
 
       - name: Extraer Metadatos de Dependabot
         id: metadata
